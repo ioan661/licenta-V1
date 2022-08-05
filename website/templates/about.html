@@ -1,12 +1,14 @@
 {%extends "base.html" %}
-{%block title%} Home {%endblock%}
+{%block title%} About page {%endblock%}
 
 {% block content%}
 
 
 <h1> email  {{ user.email }} </h1>
 <br>
-<h2>Username: {{ user.prenume }} </h2>
+<h2>Username: {{ user.username }} </h2>
+<h2>Prenume Utilizator: {{ user.prenume }} </h2>
 
+<h3 class="text-center"> Note </h3>
 
 {%endblock%}
