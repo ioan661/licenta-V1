@@ -14,7 +14,6 @@ def create_app():
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://rkqwdpakvbeemb:1b988f69b178f28e8c00e59c0959352b178a5cb6b3409c53fe289493d223458a@ec2-34-198-186-145.compute-1.amazonaws.com:5432/d56qajvnl83ooj'
     db.init_app(app)
 
-
     #blueprints for website
     from .views import views
     from .auth import auth
@@ -33,6 +32,13 @@ def create_app():
     @login_manager.user_loader
     def load_user(id): 
         return User.query.get(int(id))
+
+    # @login_manager.user_loader
+    # def load_user(user_id): 
+    #     return User.query.filter(id = user_id).first()
+
+    # def load_all_users():
+    #     return User.query.all() 
 
     return app 
 
